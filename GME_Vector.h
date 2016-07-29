@@ -17,10 +17,10 @@ class Vector2
 {
 public:
 		float 			x, y;
-						Vector2();
-						~Vector2();
+					Vector2();
+					~Vector2();
 		explicit 		Vector2(float x, float y);
-						Vector2(const Vector2& r);
+					Vector2(const Vector2& r);
 		Vector2 		operator - () const;
 		Vector2&		operator = (const Vector2& r);
 		Vector2 		operator + (const Vector2& r) const;
@@ -29,8 +29,8 @@ public:
 		Vector2&		operator -= (const Vector2& r);
 		Vector2 		operator * (const float scalar);
 		float 			operator * (const Vector2& r) const;
-        bool            operator == (const Vector2& r) const;
-        bool            compare(const Vector2& r) const;
+        	bool            	operator == (const Vector2& r) const;
+        	bool            	compare(const Vector2& r) const;
 		Vector2 		normalize();
 		float 			angle(const Vector2 &a, const Vector2 &b);
 		void 			assign(float x, float y);
@@ -145,10 +145,10 @@ class Vector3
 {
 public:
 		float 			x, y, z;
-						Vector3();
-						~Vector3();
+					Vector3();
+					~Vector3();
 		explicit 		Vector3(float x, float y, float z);
-						Vector3(const Vector3& r);
+					Vector3(const Vector3& r);
 		Vector3 		operator - () const;
 		Vector3&		operator = (const Vector3& r);
 		Vector3 		operator + (const Vector3& r) const;
@@ -158,8 +158,8 @@ public:
 		Vector3 		operator * (const float scalar);
 		float 			operator * (const Vector3& r) const;
 		//Vector3&		operator * (const Vector3& r) const;
-        bool            operator == (const Vector3& r) const;
-        bool            compare(const Vector3& r) const;
+        	bool            	operator == (const Vector3& r) const;
+        	bool            	compare(const Vector3& r) const;
 		Vector3 		normalize();
 		float 			angle(const Vector3 &a, const Vector3 &b);
 		void 			assign(float x, float y, float z);
