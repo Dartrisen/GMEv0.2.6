@@ -38,12 +38,6 @@ public:
         bool        collisionDetect(ClassicParticle& a, ClassicParticle& b);
         void        solver(ClassicParticle& a, ClassicParticle& b) const;
 };
-    
-class PositionBasedParticle: public ClassicParticle
-{
-public:
-    
-};
 
 ClassicParticle::ClassicParticle()
 {
@@ -52,7 +46,7 @@ ClassicParticle::ClassicParticle()
 	acceleration = Vector3();
 }
 
-ClassicParticle::ClassicParticle(Vector3& r, Vector3& a)//экспериментальный метод, создаем два вектора и передаем их в функцию. Vector3 a = (1,1,1) и т.д.
+ClassicParticle::ClassicParticle(Vector3& r, Vector3& a)
 {
 	position = (Vector3) r;
 	acceleration = (Vector3) a;
@@ -65,9 +59,9 @@ ClassicParticle::~ClassicParticle()
 
 void ClassicParticle::move(const float dt)
 {
-  Vector3 delta = position - prevPosition;
-  prevPosition = position;
-  position += delta + acceleration * dt * dt;
+  	Vector3 delta = position - prevPosition;
+  	prevPosition = position;
+  	position += delta + acceleration * dt * dt;
 }
 
 bool ClassicParticle::collisionDetect(ClassicParticle& a, ClassicParticle& b)
@@ -79,51 +73,50 @@ bool ClassicParticle::collisionDetect(ClassicParticle& a, ClassicParticle& b)
 	else return false;
 }
 
-void ClassicParticle::solver(ClassicParticle& a, ClassicParticle& b) const//локальные переменные а и б остаются внутри функции, вызывая функцию для глобальных переменных-частиц, не получаем возврат -> не получаем координаты для движения
+void ClassicParticle::solver(ClassicParticle& a, ClassicParticle& b) const
 {
 	Vector3 r1 = a.position;
 	Vector3 r2 = b.position;
 	Vector3 penetrationDirection = (r2 - r1).normalize();
 	float penetrationDepth = a.radius + b.radius - (r2 - r1).abs();
-    a.position -= penetrationDirection * penetrationDepth * 1.0f;//0.5f;
-    b.position += penetrationDirection * penetrationDepth * 1.0f;//0.5f;
-    //return Vector2(a.position.x, b.position.x);
+    	a.position -= penetrationDirection * penetrationDepth * 1.0f;//0.5f;
+    	b.position += penetrationDirection * penetrationDepth * 1.0f;//0.5f;
 }
 
-/*class PositionBasedParticle
+/*class PositionBasedParticle: public ClassicParticle
 {
 public:
 	PositionBasedParticle();
 	~PositionBasedParticle();
-	Vector3 Position;
-	Vector3 Acceleration;
+	Vector3 position;
+	Vector3 acceleration;
 	Vector3 delta;
 	float radius;
-	void Move(float dt);
-	void Push(Vector3 delta);
+	void move(const float dt);
+	void push(Vector3& delta);
 };
 
-PositionBasedParticle::PositionBasedParticle (void)
+PositionBasedParticle::PositionBasedParticle ()
 {
-	Position = Vector3(0.0f, 0.0f, 0.0f);
+	position = Vector3(0.0f, 0.0f, 0.0f);
 	delta = Vector3(0.0f, 0.0f, 0.0f);
-	Acceleration = Vector3(0.0f, 0.0f, 0.0f);
+	acceleration = Vector3(0.0f, 0.0f, 0.0f);
 }
 
-PositionBasedParticle::~PositionBasedParticle (void)
+PositionBasedParticle::~PositionBasedParticle ()
 {
 
 }
 
-void PositionBasedParticle::Move(float dt)
+void PositionBasedParticle::move(const float dt)
 {
-  delta += Acceleration * dt * dt;
-  Position += delta;
+  delta += acceleration * dt * dt;
+  position += delta;
 }
 
-void PositionBasedParticle::Push(Vector3 delta)
+void PositionBasedParticle::push(Vector3& delta)
 {
-  Position += delta;
+  position += delta;
   delta += delta;
 }*/
 
