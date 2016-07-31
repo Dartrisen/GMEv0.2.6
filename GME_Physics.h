@@ -26,8 +26,8 @@ class ClassicParticle
 {
 public:
                     ClassicParticle();
-                    ~ClassicParticle();
-                    ClassicParticle(Vector3& r, Vector3& a);
+        virtual     ~ClassicParticle();
+        explicit    ClassicParticle(Vector3& r, Vector3& a);
         Vector3     position;
         Vector3     prevPosition;
         Vector3     velocity;
@@ -43,6 +43,7 @@ ClassicParticle::ClassicParticle()
 {
 	position = Vector3();
 	prevPosition = Vector3();
+	velocity = Vector3();
 	acceleration = Vector3();
 }
 
@@ -86,8 +87,8 @@ void ClassicParticle::solver(ClassicParticle& a, ClassicParticle& b) const
 /*class PositionBasedParticle: public ClassicParticle
 {
 public:
-	PositionBasedParticle();
-	~PositionBasedParticle();
+		PositionBasedParticle();
+	virtual ~PositionBasedParticle();
 	Vector3 position;
 	Vector3 acceleration;
 	Vector3 delta;
@@ -98,9 +99,9 @@ public:
 
 PositionBasedParticle::PositionBasedParticle ()
 {
-	position = Vector3(0.0f, 0.0f, 0.0f);
-	delta = Vector3(0.0f, 0.0f, 0.0f);
-	acceleration = Vector3(0.0f, 0.0f, 0.0f);
+	position = Vector3();
+	delta = Vector3();
+	acceleration = Vector3();
 }
 
 PositionBasedParticle::~PositionBasedParticle ()
