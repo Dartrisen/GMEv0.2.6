@@ -78,6 +78,10 @@ void ClassicParticle::solver(ClassicParticle& a, ClassicParticle& b) const
     b.position += penetrationDirection * penetrationDepth * 1.0f;
 }
 
+//------------------------------
+// GME - Position Based Particle
+//------------------------------
+
 class PositionBasedParticle: public ClassicParticle
 {
 public:
