@@ -1,7 +1,7 @@
 //-----------------------------------------------
-// Graph_Mode_Engine version 0.2.6
+// Graph_Mode_Engine version 0.2.5
 // GME_PHYSICS
-// Part of GMEv0.2.6
+// Part of GMEv0.2.5
 // Copyright (c) 2012-2016. All rights reserved.
 //-----------------------------------------------
 
