@@ -84,43 +84,6 @@ void ClassicParticle::solver(ClassicParticle& a, ClassicParticle& b) const
     	b.position += penetrationDirection * penetrationDepth * 1.0f;//0.5f;
 }
 
-/*class PositionBasedParticle: public ClassicParticle
-{
-public:
-		PositionBasedParticle();
-	virtual ~PositionBasedParticle();
-	Vector3 position;
-	Vector3 acceleration;
-	Vector3 delta;
-	float radius;
-	void move(const float dt);
-	void push(Vector3& delta);
-};
-
-PositionBasedParticle::PositionBasedParticle ()
-{
-	position = Vector3();
-	delta = Vector3();
-	acceleration = Vector3();
-}
-
-PositionBasedParticle::~PositionBasedParticle ()
-{
-
-}
-
-void PositionBasedParticle::move(const float dt)
-{
-  delta += acceleration * dt * dt;
-  position += delta;
-}
-
-void PositionBasedParticle::push(Vector3& delta)
-{
-  position += delta;
-  delta += delta;
-}*/
-
 }//end namespace GME_MATH
 }//end namespace GMEngine
 
