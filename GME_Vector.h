@@ -1,13 +1,13 @@
 //-----------------------------------------------
-// Graph_Mode_Engine version 0.2.6
+// Graph_Mode_Engine version 0.2.5
 // GME_MATH_VECTORS
-// Part of GMEv0.2.6
+// Part of GMEv0.2.5
 // Copyright (c) 2012-2016. All rights reserved.
 //-----------------------------------------------
 
 #ifndef __MATH_VECTOR_H__
 #define __MATH_VECTOR_H__
-#include <math.h>
+#include <cmath>
 
 //-------------------------
 // GME - Vector2d
