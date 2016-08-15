@@ -41,14 +41,14 @@ public:
 ClassicParticle::ClassicParticle()
 {
 	position = Vector3();
-    velocity = Vector3();
+    	velocity = Vector3();
 	acceleration = Vector3();
 }
 
 ClassicParticle::ClassicParticle(Vector3& r, Vector3& v, Vector3& a)
 {
 	position = (Vector3) r;
-    velocity = (Vector3) v;
+    	velocity = (Vector3) v;
 	acceleration = (Vector3) a;
 }
 
@@ -74,8 +74,8 @@ void ClassicParticle::solver(ClassicParticle& a, ClassicParticle& b) const
 {
 	Vector3 penetrationDirection = (b.position-a.position).normalize();
 	float penetrationDepth = (a.radius + b.radius) - (b.position-a.position).abs();
-    a.position -= penetrationDirection * penetrationDepth * 1.0f;
-    b.position += penetrationDirection * penetrationDepth * 1.0f;
+    	a.position -= penetrationDirection * penetrationDepth * 1.0f;
+    	b.position += penetrationDirection * penetrationDepth * 1.0f;
 }
 
 //------------------------------
