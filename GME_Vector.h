@@ -17,9 +17,9 @@ class Vector2
 {
 public:
 		float 			x, y;
-					Vector2();
-					~Vector2();
-		explicit 		Vector2(float x, float y);
+					Vector2(): x(0), y(0){};
+		virtual			~Vector2();
+		explicit 		Vector2(float x, float y) x(x),y(y){};
 					Vector2(const Vector2& r);
 		Vector2 		operator - () const;
 		Vector2&		operator = (const Vector2& r);
@@ -37,16 +37,6 @@ public:
 		float 			sqrAbs() const;
 		float 			abs() const;
 };
-
-Vector2::Vector2() // default constructor
-{
-	this->x = 0.0f; this->y = 0.0f;
-}
-
-Vector2::Vector2(float x, float y) //constructor
-{
-	this->x = x; this->y = y;
-}
 
 Vector2::Vector2(const Vector2& r)
 {
@@ -145,9 +135,9 @@ class Vector3
 {
 public:
 		float 			x, y, z;
-					Vector3();
-					~Vector3();
-		explicit 		Vector3(float x, float y, float z);
+					Vector3(): x(0), y(0), z(0){};
+		virtual			~Vector3();
+		explicit 		Vector3(float x, float y, float z): x(x), y(y), z(z){};
 					Vector3(const Vector3& r);
 		Vector3 		operator - () const;
 		Vector3&		operator = (const Vector3& r);
@@ -167,22 +157,12 @@ public:
 		float 			abs() const;
 };
 
-inline Vector3::Vector3() // default constructor
-{
-	this->x=0.0f; this->y=0.0f; this->z=0.0f;
-}
-
-inline Vector3::Vector3(float x, float y, float z) //constructor
-{
-	this->x = x; this->y = y; this->z = z;
-}
-
 inline Vector3::Vector3(const Vector3& r)
 {
     this->x = r.x; this->y = r.y; this->z = r.z;
 }
 
-inline Vector3::~Vector3()//default destructor
+inline Vector3::~Vector3()
 {
 
 }
