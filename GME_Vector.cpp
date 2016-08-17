@@ -84,13 +84,6 @@ inline float Vector3::operator * (const Vector3& r) const//dot product
 	return (float) x*r.x + y*r.y + z*r.z;
 }
 
-/*Vector3& Vector3::operator * (const Vector3& r) const//cross product
-{
-	return Vector3 ((y * r.z) - (z * r.y),
-		(z * r.x) - (x * r.z),
-		(x * r.y) - (y * r.x));
-}*/
-
 inline bool Vector3::operator==(const Vector3& r) const
 {
     return compare(r);
