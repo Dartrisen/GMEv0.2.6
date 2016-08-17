@@ -9,6 +9,7 @@
 #define __PRECOMPILED_H__
 
 #include "GME_Physics.h"
-#include "Vector.h"
+#include "GME_Vector.h"
+#include "GME_Vector.cpp"
 
 #endif /* __PRECOMPILED__ */
